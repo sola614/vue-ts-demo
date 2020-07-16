@@ -14,6 +14,13 @@
     <p class="mb10">count2：{{count2}}</p>
     <p class="mb10">count3：{{count3}}</p>
     <HelloWorld></HelloWorld>
+    <a-button
+      type="primary"
+      @click="goDetail"
+      class="mb10"
+    >
+      点击进入详情页
+    </a-button>
   </div>
 </template>
 
@@ -28,6 +35,7 @@ import {
   Model
 } from "vue-property-decorator";
 import HelloWorld from "./HelloWorld.vue"; //引入组件必须带上.vue
+
 //组件引入组件
 @Component({
   components: {
@@ -144,6 +152,10 @@ export default class Index extends Vue {
     this.count2--;
     this.addToCount(1); //执行this.count += n;后再执行this.$emit
     this.$emit("change", true);
+  }
+  goDetail() {
+    // location.href = "/Detail";
+    this.$router.push("/detail");
   }
   // this.count += n;this.$emit('addToCount')
   @Emit("addToCount")

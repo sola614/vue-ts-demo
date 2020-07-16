@@ -1,3 +1,4 @@
+const path = require("path");
 module.exports = {
   // css: {
   //   loaderOptions: {
@@ -19,8 +20,20 @@ module.exports = {
             },
           }
         }]
-      }]
+      }],
+
     },
-  }
+    resolve: {
+      // extensions: ['*', '.js', '.vue', '.ts'],
+      alias: {
+        '@': path.resolve(__dirname, 'src')
+      }
+    }
+  },
+  // lintOnSave: true,
+  // chainWebpack: (config) => {
+  //   config.resolve.alias
+  //     .set('@', path.join(__dirname, 'src'))
+  // }
 
 }
