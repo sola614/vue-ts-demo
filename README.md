@@ -34,5 +34,7 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
+### Vue Cli Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 有疑问可提issues，有空会尽可能回答，谢谢
