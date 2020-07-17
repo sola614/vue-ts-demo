@@ -23,14 +23,22 @@ import IndexComp from "@/components/Index.vue";
 })
 export default class Index extends Vue {
   mounted() {
-    console.log("appmounted");
+    console.log("appmounted", this.$store);
     //
     //使用$store
     console.log(this.$store.state);
     //触发actions
-    this.$store.dispatch("setStore1", 1111);
+    this.$store.dispatch("app/setStore1", 1111);
+    this.$store.dispatch("app2/setStore1", 2222);
     //调用getters
-    console.log(this.$store.getters.gettersStore1);
+    console.log(
+      "app/gettersStore1--------",
+      this.$store.getters["app/gettersStore1"]
+    );
+    console.log(
+      "app/gettersStore1--------",
+      this.$store.getters["app2/gettersStore1"]
+    );
 
     //请求接口
     this.$axios
