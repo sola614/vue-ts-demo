@@ -23,8 +23,7 @@ import IndexComp from "@/components/Index.vue";
 })
 export default class Index extends Vue {
   mounted() {
-    console.log("appmounted", this.$store);
-    //
+    console.log("appmounted");
     //使用$store
     console.log(this.$store.state);
     //触发actions
