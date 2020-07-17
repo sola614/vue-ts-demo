@@ -5,29 +5,39 @@
       src="@/assets/logo.png"
     >
     <h1 class="title">一个Vue.js + TypeScript + Ant Design Vue App</h1>
-    <Index
+    <IndexComp
       propB="123"
       @addToCount="addToCount"
       v-model="lovingVue"
-    ></Index>
+    ></IndexComp>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator";
-import Index from "@/components/Index.vue";
+import IndexComp from "@/components/Index.vue";
 @Component({
   components: {
-    Index
+    IndexComp
   }
 })
-export default class App extends Vue {
+export default class Index extends Vue {
   mounted() {
-    this.axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
-      console.log(res);
-    });
-
     console.log("appmounted");
+    //
+    //使用$store
+    console.log(this.$store.state);
+    //触发actions
+    this.$store.dispatch("setStore1", 1111);
+    //调用getters
+    console.log(this.$store.getters.gettersStore1);
+
+    //请求接口
+    this.$axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((res: any) => {
+        console.log(res);
+      });
   }
   addToCount(v: number) {
     console.log("@emit", v);

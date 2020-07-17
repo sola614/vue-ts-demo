@@ -43,13 +43,13 @@ import HelloWorld from "./HelloWorld.vue"; //引入组件必须带上.vue
   }
 })
 //当前组件属性声明
-export default class Index extends Vue {
+export default class IndexComp extends Vue {
   //vue-class-component
   //data声明
   message: string = "Ant Design Vue Button";
   count: number = 0;
   count2: number = 0;
-  count3 = "";
+  count3 = "没有值哦";
   //生命周期声明
   mounted() {
     console.log("mounted");
